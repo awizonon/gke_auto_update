@@ -1,0 +1,17 @@
+name: DEPLOY
+on:
+    push:
+        branches: [main]
+
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: cluster-1    # Add your cluster name here.
+  GKE_ZONE: us-central1-c   # Add your cluster zone here.
+  DEPLOYMENT_NAME: gke-test # Add your deployment name here.
+  IMAGE: static-site
+
+jobs:
+    build:
+        runs-on: [self-hosted, gke_deploy]
+        steps:
+            - run: echo "test ok"
