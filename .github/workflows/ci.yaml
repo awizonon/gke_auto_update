@@ -12,6 +12,6 @@ env:
 
 jobs:
     build:
-        runs-on: [self-hosted, gke_deploy]
+        runs-on: [self-hosted, gke]
         steps:
             - run: echo "test ok"
