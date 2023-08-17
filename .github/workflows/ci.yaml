@@ -5,8 +5,8 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: cluster-1    # Add your cluster name here.
-  GKE_ZONE: us-central1-c   # Add your cluster zone here.
+  GKE_CLUSTER: prod-cluster-1    # Add your cluster name here.
+  GKE_ZONE: europe-west1   # Add your cluster zone here.
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
   IMAGE: static-site
 
@@ -21,3 +21,6 @@ jobs:
 
             - name: Set gcloud CLI
               run: gcloud auth activate-service-account --key-file=/home/camegan/key.json
+
+            - name: Set get cluster
+              run: gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --region ${{ env.GKE_ZONE }} --project $PROJECT_ID
