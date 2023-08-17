@@ -18,3 +18,6 @@ jobs:
 
             - name: Checkout
               uses: actions/checkout@v3
+
+            - name: Set gcloud CLI
+              run: gcloud auth activate-service-account --key-file=/home/camegan/key.json
