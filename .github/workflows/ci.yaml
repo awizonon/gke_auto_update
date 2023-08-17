@@ -4,7 +4,7 @@ on:
         branches: [main]
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  PROJECT_ID: poc-terraform-359717
   GKE_CLUSTER: prod-cluster-1    # Add your cluster name here.
   GKE_ZONE: europe-west1   # Add your cluster zone here.
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
