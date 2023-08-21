@@ -23,7 +23,7 @@ jobs:
               run: gcloud auth activate-service-account --key-file=/home/camegan/key.json
 
             - name: test
-              run: echo $PROJECT_ID
+              run: gcloud auth list
 
 
 #            - name: Set get cluster
