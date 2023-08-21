@@ -25,12 +25,12 @@ jobs:
             - name: test
               run: gcloud auth list
 
+	    - name: Set authentication artifact for pulling image from registry
+              run: gcloud auth configure-docker europe-west1-docker.pkg.dev 
+
 
             - name: Set get cluster
               run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
-
-	    - name: Set authentication artifact for pulling image from registry
-              run: gcloud auth configure-docker europe-west1-docker.pkg.dev #Can be chang if the repository name changes
 #
 #            - name: Deploy test pod
 #              run: kubectl deploy -f deploy/test.yaml
