@@ -28,5 +28,5 @@ jobs:
 	    - name: Set authentication artifact for pulling image from registry
               run: gcloud auth configure-docker europe-west1-docker.pkg.dev #Can be chang if the repository name changes
 
-            - name: Deploy test pod
-              run: kubectl deploy -f deploy/test.yaml
+#            - name: Deploy test pod
+#              run: kubectl deploy -f deploy/test.yaml
