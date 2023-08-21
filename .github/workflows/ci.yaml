@@ -25,8 +25,8 @@ jobs:
             - name: test
               run: gcloud auth list
 
-	    - name: Set authentication artifact for pulling image from registry
-              run: echo -n "\Y" | gcloud auth configure-docker europe-west1-docker.pkg.dev 
+	    #- name: Set authentication artifact for pulling image from registry
+            #  run: echo -n "\Y" | gcloud auth configure-docker europe-west1-docker.pkg.dev 
 
 
             - name: Set get cluster
