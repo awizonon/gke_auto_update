@@ -22,8 +22,8 @@ jobs:
             - name: Set gcloud CLI
               run: gcloud auth activate-service-account --key-file=/home/camegan/key.json
 
-            - name: Set get cluster
-              run: gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --region ${{ env.GKE_ZONE }} --project ${{ env.PROJECT_ID }}
+#            - name: Set get cluster
+#              run: gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --region ${{ env.GKE_ZONE }} --project ${{ env.PROJECT_ID }}
 
 	    - name: Set authentication artifact for pulling image from registry
               run: gcloud auth configure-docker europe-west1-docker.pkg.dev #Can be chang if the repository name changes
