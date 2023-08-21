@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-gke-update
+  name: test-gke-update
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-gke-update
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: test-gke-update
+    spec:
+      containers:
+      - image: "europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v1"
+        name: gke-update-test
