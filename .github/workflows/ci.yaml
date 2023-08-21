@@ -23,7 +23,7 @@ jobs:
               run: gcloud auth activate-service-account --key-file=/home/camegan/key.json
 
             - name: get var content
-               run: echo ${{ env.GKE_CLUSTER }} && echo ${{ env.GKE_ZONE }} && echo ${{ env.PROJECT_ID }}
+               run: echo ${{ env.GKE_CLUSTER }}
 
 #            - name: Set get cluster
 #              run: gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --region ${{ env.GKE_ZONE }} --project ${{ env.PROJECT_ID }}
