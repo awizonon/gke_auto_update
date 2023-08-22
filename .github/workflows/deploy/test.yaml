@@ -18,3 +18,4 @@ spec:
       containers:
       - image: "europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v1"
         name: gke-update-test
+
