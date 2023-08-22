@@ -35,10 +35,10 @@ jobs:
               run: echo ${{ env.MY_DATE }}
 
             - name: Build image 
-              run: cd /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/hello-app && docker build -t europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v4 .
+              run: cd /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/hello-app && docker build -t europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v${{ env.MY_DATE }} .
 
             - name: Push image
-              run: docker push europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v4
+              run: docker push europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v${{ env.MY_DATE }}
 
             - name: Set get cluster
               run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
