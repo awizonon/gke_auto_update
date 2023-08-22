@@ -32,4 +32,4 @@ jobs:
               run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
 
             - name: Deploy test pod
-              run: cd /home/camegan/deploy && kubectl apply -f test.yaml
+              run: cd /home/camegan/deploy && kubectl apply -f test.yaml && kubectl apply -f service.yaml
