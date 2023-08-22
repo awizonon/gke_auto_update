@@ -26,7 +26,7 @@ jobs:
               run: gcloud auth list
 
             - name: Test2
-              run: /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/.github/workflows/script 
+              run: echo -e "Y\n" | gcloud auth configure-docker europe-west1-docker.pkg.dev 
             
 #	    - name: Set get cluster
 #              run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
