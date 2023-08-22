@@ -28,6 +28,12 @@ jobs:
             - name: Set auth registry
               run: echo -e "Y\n" | gcloud auth configure-docker europe-west1-docker.pkg.dev 
 
+            - name: Dynamically set MY_DATE environment variable
+              run: echo "MY_DATE=2020-10-07T12:00:00+01:00" >> $GITHUB_ENV
+
+            - name: Test MY_DATE variable
+              run: echo ${{ env.MY_DATE }}
+
             - name: Build image 
               run: cd /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/hello-app && docker build -t europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v4 .
 
