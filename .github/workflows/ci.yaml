@@ -22,8 +22,8 @@ jobs:
             - name: Set gcloud CLI
               run: gcloud auth activate-service-account --key-file=/home/camegan/key.json
 
-#            - name: test
-#              run: gcloud auth list
+            - name: test
+              run: gcloud auth list
 
 #	    - name: Build and push script
 #              run: /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/.github/workflows/script 
