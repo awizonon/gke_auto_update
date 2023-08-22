@@ -43,5 +43,8 @@ jobs:
             - name: Set get cluster
               run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
 
+            - name: Update tag in deploy file
+              run: cd /home/camegan/deploy && sed "s|europe-west1-docker.pkg.dev/$PROJECT_ID/testupdate/gke_update_test:v[0-9]*|europe-west1-docker.pkg.dev/$PROJECT_ID/testupdate/gke_update_test:v${{ env.MY_DATE }}|g" test.yaml
+
             - name: Deploy test pod
               run: cd /home/camegan/deploy && kubectl apply -f test.yaml && kubectl apply -f service.yaml
