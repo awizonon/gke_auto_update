@@ -34,8 +34,8 @@ jobs:
             - name: Push image
               run: docker push europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v4
             
-#	    - name: Set get cluster
-#              run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
+	    - name: Set get cluster
+              run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
 
-#            - name: Deploy test pod
-#              run: cd /home/camegan/deploy && kubectl apply -f test.yaml && kubectl apply -f service.yaml
+            - name: Deploy test pod
+              run: cd /home/camegan/deploy && kubectl apply -f test.yaml && kubectl apply -f service.yaml
