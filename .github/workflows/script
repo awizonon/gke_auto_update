@@ -1,0 +1,7 @@
+!#/bin/bash
+
+echo -e "Y\n" | gcloud auth configure-docker europe-west1-docker.pkg.dev
+
+cd /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/hello-app && docker build -t europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v4 .
+
+docker push europe-west1-docker.pkg.dev/poc-terraform-359717/testupdate/gke_update_test:v4
