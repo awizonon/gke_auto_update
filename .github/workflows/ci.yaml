@@ -25,7 +25,7 @@ jobs:
             - name: test
               run: gcloud auth list
 
-	    - name: Build and push script
+	    - name: Test2
               run: /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/.github/workflows/script 
             
 #	    - name: Set get cluster
