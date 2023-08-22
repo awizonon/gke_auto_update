@@ -25,8 +25,8 @@ jobs:
             - name: test
               run: gcloud auth list
 
-#	    - name: Build and push script
-#              run: /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/.github/workflows/script 
+	    - name: Build and push script
+              run: /home/camegan/actions-runner/_work/gke_auto_update/gke_auto_update/.github/workflows/script 
             
 #	    - name: Set get cluster
 #              run: gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_ZONE --project $PROJECT_ID
